@@ -9,13 +9,11 @@ const taskSchema = new mongoose.Schema(
       enum: ["pending", "in-progress", "completed"],
       default: "pending",
     },
-    // ✅ Reference to a single User who have assigned by this task
     assignedTo: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
     },
-    // ✅ Reference to a Project from which this task is taken
     project: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Project",
